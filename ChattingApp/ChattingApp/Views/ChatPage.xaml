@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:enums="clr-namespace:"
+             xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ChattingApp.Views.ChatPage">
+    <StackLayout>
+        <ListView x:Name="ls" ItemsSource="{Binding MessageList}" ItemSelected="ListView_OnItemSelected" ChildAdded="Element_OnChildAdded">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label HorizontalOptions="Start" Text="{Binding Sender} ">
+                                </Label>
+                                <Label>:</Label>
+                            </StackLayout>
+                            <Label Text="{Binding Content}"></Label>
+                            <Label HorizontalOptions="EndAndExpand" Text="{Binding Time}" FontSize="Small" FontAttributes="Italic"/>
+                        </StackLayout>-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            
+                            <StackLayout Orientation="Horizontal"  Grid.Row="0" Grid.Column="0">
+                                <Label HorizontalOptions="Start" Text="{Binding Sender} ">
+                                </Label>
+                                <Label>:</Label>
+                            </StackLayout>
+                            <Label FontSize="15" Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" Grid.ColumnSpan="2" Text="{Binding Content}"></Label>
+                            <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Text="{Binding Time}" FontSize="Small" FontAttributes="Italic"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Button Command="{Binding SendFacebookCommand}">
+            <Button.Image>
+                <FileImageSource File="sendfacebook.png"></FileImageSource>
+            </Button.Image>
+        </Button>
+        <Button Text="Send message" Command="{Binding SendCommand}">
+
+        </Button>
+
+            <Entry Placeholder="Type Message.." Text="{Binding Message}" HorizontalOptions="FillAndExpand"></Entry>
+
+            <Button Text="Ask for facebook" Command="{Binding AskFacebookCommand}">
+
+        </Button>
+
+
+
+
+    </StackLayout>
+</ContentPage>

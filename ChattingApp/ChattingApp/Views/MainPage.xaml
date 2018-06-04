@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:converters="clr-namespace:ChattingApp.Converters;assembly=ChattingApp"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ChattingApp.Views.MainPage"
+             NavigationPage.HasBackButton="False">
+    <!--<Grid BackgroundColor="Beige" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Source="applogoImg.png" BackgroundColor="#1E8770"></Image>
+        <Button BorderColor="Transparent" WidthRequest="269" BorderRadius="0" BorderWidth="0" Command="{Binding LoginCommand}" HeightRequest="76" Grid.Row="1" BackgroundColor="Transparent" >
+            <Button.Image >
+                <FileImageSource File="fbloginImg.png"   ></FileImageSource>
+            </Button.Image>
+        </Button>
+    </Grid>-->
+    <Grid BackgroundColor="Transparent" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Source="applogoImg.png"></Image>
+        <Button BackgroundColor="Transparent" WidthRequest="269" Command="{Binding LoginCommand}" HeightRequest="76" Grid.Row="1" HorizontalOptions="Center"  VerticalOptions="Center" >
+            <Button.Image >
+                <FileImageSource File="fbloginImg.png"  ></FileImageSource>
+            </Button.Image>
+        </Button>
+    </Grid>
+</ContentPage>

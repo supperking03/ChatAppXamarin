@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.PhuongKhanh.ChattingApp">
+	<uses-sdk android:minSdkVersion="23" />
+	<application android:theme="@style/MyTheme" android:icon="@drawable/appicon" android:label="Làm quen nhé"></application>
+</manifest>

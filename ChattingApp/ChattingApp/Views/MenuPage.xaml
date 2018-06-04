@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:controls="clr-namespace:ChattingApp.Controls;assembly=ChattingApp"
+             xmlns:enums="clr-namespace:ChattingApp.Enums;assembly=ChattingApp"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ChattingApp.Views.MenuPage" NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False">
+    <!--<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+        <Image Source="{Binding User.PhotoUrl}"></Image>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Display name: "></Label>
+            <Label Text="{Binding User.DisplayName}"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="First name: "></Label>
+            <Label Text="{Binding User.FirstName}"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Last name: "></Label>
+            <Label Text="{Binding User.LastName}"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="ID: "></Label>
+            <Label Text="{Binding User.LocalId}"></Label>
+        </StackLayout>
+        <controls:EnumBindablePicker Title="Select Gender" x:TypeArguments="enums:GenderEnum" SelectedItem="{Binding SelectedGender}"></controls:EnumBindablePicker>
+        <Button Text="Find" Command="{Binding FindPartnerCommand}"></Button>
+        <ActivityIndicator Color="Blue" IsRunning="{Binding IsFindingPartner}"></ActivityIndicator>
+    </StackLayout>-->
+    <MasterDetailPage.Master>
+        <ContentPage Title="Default">
+            <StackLayout>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Label Text="Thông tin " FontSize="Large"/>
+                    <Label Text=""></Label>
+                    <Image Source="{Binding User.PhotoUrl}"/>
+                    <Label Text=""></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Tên hiển thị  :" ></Label>
+                        <Label Text="{Binding User.DisplayName}"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Giới tính  :" ></Label>
+                        <Label Text="{Binding User.Gender}"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Độ tuổi  :" ></Label>
+                        <Label Text="{Binding User.Age}"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
